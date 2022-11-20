@@ -5,7 +5,7 @@ import Layout from 'components/Layout'
 import { Home } from 'pages/Home'
 import { Guide } from 'pages/Guide'
 
-import { lang } from 'store'
+import { lang } from 'store/lang'
 
 
 export default function() {

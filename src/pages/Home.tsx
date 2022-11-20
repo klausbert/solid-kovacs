@@ -1,7 +1,7 @@
 import type { Component } from 'solid-js'
 import { Link } from '@solidjs/router'
 
-import { heels } from 'store'
+import { heels } from 'store/heels'
 
 
 export const Home: Component = () => {
