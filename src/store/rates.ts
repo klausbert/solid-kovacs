@@ -6,20 +6,18 @@ import { lang } from './lang'
 
 const client = createClient({ url: import.meta.env.BASE_URL })
 const gqlQuery = gql`
-  query Heels($lang: [Locale!]!) {
-    heels(locales: $lang) {
-      id
-      slug
-      title
-      height
+  query Rates($lang: [Locale!]!) {
+    rates(locales: $lang) {
+      shipTo
+      rate
     }
   }
 `
 
 
-export const [heels] = createResource(lang,
+export const [rates] = createResource(lang,
   (lang) => client.query(gqlQuery, {
     initialValue: [],
     lang: [lang]
-  }).toPromise().then(({ data }) => data.heels )
+  }).toPromise().then(({ data }) => data.rates )
 )
