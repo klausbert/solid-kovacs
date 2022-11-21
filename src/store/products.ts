@@ -1,10 +1,11 @@
+import type { ResourceOptions, ResourceReturn } from 'solid-js'
 import { createResource } from 'solid-js'
 import { createClient, gql } from '@urql/core'
 
 import { lang } from './lang'
 
 
-const client = createClient({ url: import.meta.env.BASE_URL })
+const client = createClient({ url: import.meta.env.VITE_GRAPHCMS_URL })
 const gqlQuery = gql`
   query Products($lang: [Locale!]!) {
     products(where: {visible: true}, locales: $lang) {
@@ -37,9 +38,11 @@ const gqlQuery = gql`
 `
 
 
-export const [products] = createResource(lang,
-  (lang) => client.query(gqlQuery, {
+export const [products] = createResource(
+  lang,
+  lang => client.query(gqlQuery, { lang: [lang] }).toPromise().then(({ data }) => data.products ), 
+  {
+    name: 'products',
     initialValue: [],
-    lang: [lang]
-  }).toPromise().then(({ data }) => data.products )
+  }
 )

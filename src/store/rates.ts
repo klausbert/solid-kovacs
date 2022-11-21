@@ -4,7 +4,7 @@ import { createClient, gql } from '@urql/core'
 import { lang } from './lang'
 
 
-const client = createClient({ url: import.meta.env.BASE_URL })
+const client = createClient({ url: import.meta.env.VITE_GRAPHCMS_URL })
 const gqlQuery = gql`
   query Rates($lang: [Locale!]!) {
     rates(locales: $lang) {
