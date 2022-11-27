@@ -1,17 +1,38 @@
 import { Component, createMemo, For } from 'solid-js'
+import { Suspense } from 'solid-js'
 
 import { products } from 'store/products'
+
 import { Featured } from './Featured'
 
 
-export const Portfolio: Component = ({ filter }) => {
-  const subProducts = createMemo(() => products().filter(filter))
+export const Portfolio: Component = ({ select, title }) => {
+  const subProducts = createMemo(
+    () => products().filter(select)
+  )
+  const rows = createMemo(() => subProducts()
+    .map( m => ({...m, row: `${m.new ? 'A' : 'Z'}  ${m.row}` }))
+    .reduce((r, c) => (r[c.row] = (r[c.row] || []).concat(c)) && r, {})
+    // .sort((a, b) => a.sort < b.sort ? -1 : a.sort===b.sort ? 0 : 1)
+  )
+  return <Suspense>
+    <h1>{ title }</h1>
 
-  return <>
-    <h1>Portfolio</h1>
-    {/* <pre>{ JSON.stringify(subProducts(), null, 2) }</pre> */}
-    <For each={ subProducts() }>
-      {(item) => <Featured item={ item }></Featured>}
+    <For each={ Object.keys(rows()).sort().map( row => rows()[row]) }>
+      { Product }
     </For>
-  </>
+  </Suspense>
+}
+
+function Product(row) {
+  const length = row.length
+  const colClass = length===1 ? 'col-6 offset-3' : 'col'
+
+  return (
+    <div key={ row } className="row featured" style="background: WHITE">
+    { 
+      row.map((m, i) => <Featured key={ i } colClass={ colClass } product={ m } /> )
+    }
+    </div>
+  )
 }

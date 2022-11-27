@@ -21,6 +21,7 @@
     "bootstrap": "^5.2.0",
     "graphql": "^16.6.0",
     "solid-js": "^1.5.3",
+    "solid-markdown": "^1.2.0",
     "vite-tsconfig-paths": "^3.6.0"
   }
 }
