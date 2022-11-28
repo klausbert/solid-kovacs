@@ -15,7 +15,7 @@ export const Featured: Component = ({ colClass = '', product }) => {
 	return (
 		<div class={ colClass }>
 			<div class="card" style={{ border: "none" }}>
-				<Link href={`/product/${slug}`}>
+				<Link href={`/portfolio/${slug}`}>
 					<a class="card-body" style="position: relative; padding-bottom: 1.62rem"
 							onMouseOver={() => isVisible(false)} onMouseOut={() => isVisible(true)}>
 						<img class={"card-img-top "+(visible() ? "fadeIn" : "fadeOut") } 
