@@ -10,7 +10,7 @@ import { useShoppingBag } from 'hooks/useShoppingBag'
 import { useSelectedSize } from 'hooks/useSelectedSize'
 
 
-const imgPath = process.env.NEXT_PUBLIC_IMG_PATH
+const imgPath = import.meta.env.VITE_IMG_PATH
 
 
 export function SpecSheet({ product, children }) {

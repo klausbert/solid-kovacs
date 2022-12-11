@@ -5,16 +5,20 @@ import { Link } from '@solidjs/router'
 import { FormattedMessage } from 'components/Stubs'
 
 
+interface FeaturedProps {
+	colClass?: string,
+	product: any
+}
 const imgPath = import.meta.env.VITE_IMG_PATH
 
 
-export const Featured: Component = ({ colClass = '', product }) => {
+export const Featured: Component = ({ colClass = '', product }: FeaturedProps) => {
 	const { slug, imageSlug, meta, height, sizes, discount = 0, price, currency, freeShipping } = product
   const [visible, isVisible] = createSignal(true)
 
 	return (
 		<div class={ colClass }>
-			<div class="card" style={{ border: "none" }}>
+			<div class="card" style="border: none">
 				<Link href={`/portfolio/${slug}`}>
 					<a class="card-body" style="position: relative; padding-bottom: 1.62rem"
 							onMouseOver={() => isVisible(false)} onMouseOut={() => isVisible(true)}>

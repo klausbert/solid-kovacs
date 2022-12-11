@@ -22,16 +22,16 @@ export default function Slider({ className = '', source, seconds = 4, children }
 		<div class="row">
 			<div id="slideset2" class={ className }>
 				{ slides.map((m, i) => 
-					<div key={i} class={ m.className } style={{ 
+					<div class={ m.className } style={{ 
 						'background-image': `url(${m.src})`, 
 						opacity:(i===index() ? 1 : 0),
 						transition: 'opacity 1s ease-in-out'
-					}}  data-testid={`bg-img-${i}`}>
+					}}>
 						&nbsp;
 					</div>
 				)}
 
-				<img src={ slides[0].src } alt="stub" style={{ opacity: 0 }} />
+				<img src={ slides[0].src } alt="stub" style="opacity: 0" />
 				
 				{ children }
 			</div>

@@ -29,9 +29,9 @@ function Product(row) {
   const colClass = length===1 ? 'col-6 offset-3' : 'col'
 
   return (
-    <div key={ row } className="row featured" style="background: WHITE">
+    <div className="row featured" style="background: WHITE">
     { 
-      row.map((m, i) => <Featured key={ i } colClass={ colClass } product={ m } /> )
+      row.map((m, i) => <Featured colClass={ colClass } product={ m } /> )
     }
     </div>
   )

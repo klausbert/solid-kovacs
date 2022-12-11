@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@popperjs/core': ^2.11.6
+  '@solidjs/meta': ^0.28.2
   '@solidjs/router': ^0.5.0
   '@urql/core': ^3.0.5
   bootstrap: ^5.2.0
@@ -16,6 +17,7 @@ specifiers:
 
 dependencies:
   '@popperjs/core': 2.11.6
+  '@solidjs/meta': 0.28.2_solid-js@1.6.2
   '@solidjs/router': 0.5.0_solid-js@1.6.2
   '@urql/core': 3.0.5_graphql@16.6.0
   bootstrap: 5.2.0_@popperjs+core@2.11.6
@@ -399,6 +401,14 @@ packages:
 
   /@popperjs/core/2.11.6:
     resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
+    dev: false
+
+  /@solidjs/meta/0.28.2_solid-js@1.6.2:
+    resolution: {integrity: sha512-avlLgBPdk4KVxzRGFlYp/MIJo8B5jVgXPgk6OUnUP8km21Z+ovO+DUd7ZPA7ejv8PBdWi9GE3zCzw8RU2YuV2Q==}
+    peerDependencies:
+      solid-js: '>=1.4.0'
+    dependencies:
+      solid-js: 1.6.2
     dev: false
 
   /@solidjs/router/0.5.0_solid-js@1.6.2:
