@@ -13,6 +13,10 @@ import Product from 'pages/portfolio/product'
 
 import { lang } from 'store/lang'
 
+// import '/index.css'
+// import '/hero.css'
+// import '/slideset2.css'
+
 
 export default function() {
   
@@ -30,8 +34,12 @@ export default function() {
           <Route path="/portfolio/:id" component={ Product } />
         </Routes>
       </Layout>
-
-      <h1>{ lang() }</h1>
+      <head>
+        <title>Hello Newman</title>
+      </head>
+      <body>
+        <h1>{ lang() }</h1>
+      </body>
     </Router>
   )
 }

@@ -3,7 +3,7 @@ import { Suspense } from 'solid-js'
 
 import { products } from 'store/products'
 
-import { Featured } from './Featured'
+import { Featured } from '../Featured'
 
 
 export const Product: Component = ({ select, title }) => {
@@ -18,3 +18,4 @@ export const Product: Component = ({ select, title }) => {
     </For>
   </Suspense>
 }
+

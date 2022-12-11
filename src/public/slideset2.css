@@ -1,0 +1,43 @@
+/* https://www.w3.org/Style/Examples/007/slideshow.en.html */
+
+#slideset2 {
+    margin-bottom: 2em;
+    position: relative;
+    width: 100%;
+}
+#slideset2 > div {
+    position: absolute; 
+    top: 0; left: 0; 
+    opacity: 0;
+
+    background-size: cover;
+    width: 100%;
+    padding-top: 50%;   /* image ratio */
+}
+#slideset2 > img {
+    width: 100%;
+}
+#slideset2 > div.s2-3 {
+    background-position-x: 50%;
+}
+#slideset2 > div.s3-3 {
+    background-position-x: 100%;
+}
+#slideset2.r3x1 > div {
+    padding-top: 33.3%;   /* image ratio */
+}
+#slideset2.v2x3 > div,
+#slideset2.r2x3 > div {
+    padding-top: 150%;   /* image ratio */
+}
+#slideset2.v2x3 > img {
+    padding-top: 100%;
+}
+#slideset2.v2x3.carousel > div {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#slideset2.v2x3.carousel > img {
+    height: 100vw;
+}

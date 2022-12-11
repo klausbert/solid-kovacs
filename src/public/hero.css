@@ -1,0 +1,48 @@
+.hero {
+    position: relative;
+    width: 100%;
+    padding-top: 50%;   /* ratio */
+    background-size: cover;
+}
+.flex-center {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-message {
+    position: absolute;
+	color: #cca674;
+    min-width: 100%;
+
+    top: 75%; /* lookbook */
+}
+.d-none.d-sm-block .hero-message {
+    top: 50%; /* landing - desktop */
+}
+.d-block.d-sm-none .hero-message {
+    top: 200%; /* landing - mobile */
+}
+.hero-message > h5 > .h1 {
+	font-size: 8rem;
+}
+.hero-message > h5 > .h3 {
+    font-size: 3rem;
+    margin-top: 3rem;
+}
+
+.hero-button {
+    background-color: #33333377;
+    border: 1px solid #cca674;
+    color: inherit;
+    padding: 4px 6px;
+}
+.hero-button:hover {
+    color: inherit;
+    background-color: #333333EE;
+    border: 1px solid #fcb684;
+    text-decoration: none;
+
+    transition: background-color 1s ease-in, border 1s ease-in;
+}

@@ -1,6 +1,6 @@
 import { useParams } from '@solidjs/router'
 
-import { Product } from 'components/Portfolio/Product'
+import { Product } from 'components/Portfolio/Product/index'
 
 
 export default function() {

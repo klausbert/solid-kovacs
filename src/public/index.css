@@ -1,0 +1,145 @@
+body {
+	background: transparent;
+}
+@media (min-width:  360px) { .fixed-top-margin { margin-top: 110px; }}
+@media (max-width:  420px) { .featured { flex-direction: column; margin-left: unset; margin-right: unset; }}
+@media (min-width:  840px) { .fixed-top-margin { margin-top: 120px; }}
+@media (min-width:  992px) { .fixed-top-margin { margin-top: 130px; }}
+@media (min-width: 1200px) { .fixed-top-margin { margin-top: 150px; }}
+@media (min-width: 1400px) { .fixed-top-margin { margin-top: 170px; }}
+@media (min-width: 1600px) { .fixed-top-margin { margin-top: 210px; }}
+
+.badge-dark {
+	background-color: rgba(52, 58, 64, 0.3);
+	border: 1px solid #f8f9fa;
+	/* color: #FFDD53; */
+	font-size: 1.1rem;
+}
+.badge-light {
+	background-color: rgba(248, 249, 250, 0.3);
+    border: 1px solid #f8f9fa;
+	color: #ffffff;
+	font-size: 1.1rem;
+}
+section {
+	background: #FFFFFF;
+	text-align: center;
+}
+section#legal li,
+section#legal p,
+section#world p {
+	font-family: 'Cormorant Garamond', Garamond, serif !important;
+	text-align: left;
+}
+section#shopping-bag {
+	min-height: 400px;
+}
+.searchIcon ~ input {
+	width: 0;
+}
+.searchIcon:hover ~ input {
+	width: 10em;
+	transition: width 0.5s ease-in-out;
+}
+/*	others...
+*/
+body {
+	color: #555;
+	overflow-x: hidden;
+}
+a.h1, div.h3, h1, h2, h3, h4, h5, h6, nav {
+	font-family: 'Cormorant Garamond', Garamond !important;
+}
+h1 {
+	color: #cca674;
+	font-size: 240%;
+	letter-spacing: -2px;
+	/* margin: 0; */
+}
+a.h1 {
+	text-decoration: none;
+}
+/* header a,  */
+h5 > a,
+h5 > a:hover {
+	color: #cca674;
+	letter-spacing: -1px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* top nav menu */
+a,
+.nav-item.dropdown, 
+.nav-item.dropdown.nav-link {
+	color: inherit;
+	letter-spacing: -1px;
+}
+a:hover,
+.dropdown-item:hover,
+.nav-item.dropdown:hover, 
+.nav-item.dropdown.nav-link:hover {
+	color: #cca674;
+}
+
+.color {
+	border: 1px solid #999;
+	padding: 0.2rem 0.5rem;
+}
+.color > img {
+	border: 1px solid;
+	height: 1.62rem;
+	width: 1.62rem; 
+}
+.md > p {
+	margin: 0;
+}
+.nav-link {
+	cursor: pointer;
+}
+/* Portfolio 
+*/
+.seo-description > * {
+	display: inline;
+	font-family: 'Cormorant Garamond';
+	font-size: 1rem;
+}
+.card-img-top.fadeIn {
+	opacity: 1;
+	transition: opacity 500ms;
+}
+.card-img-top.fadeOut {
+	opacity: 0;
+	transition: opacity 500ms;
+}
+#portfolioWrapper {
+	min-height: 400px;
+}
+/* Intro 
+*/
+#intro img[alt="photo"] {
+	float: left;
+	margin-right: 1em;
+	width: 50%;
+}
+/*	Product - unavailable size
+*/
+.unavailable {
+	display: block;
+	background-image: url('unavailable.png');
+	background-size: 100% 100%;
+}
+/*	Checkout
+*/
+.form-control:invalid {
+	background-color: #fcf6d4;
+	color: darkred;
+}
+/*	Contact
+*/
+#contact > .form-control {
+	margin: 2px 0;
+}
+#contact > .form-control:invalid {
+	border: 1px solid #cca674;
+}

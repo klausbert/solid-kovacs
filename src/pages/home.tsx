@@ -1,30 +1,38 @@
-import { heels } from 'store/heels'
-import { models } from 'store/models'
-import { products } from 'store/products'
-import { rates } from 'store/rates'
-import { sizes } from 'store/sizes'
+import { Link } from '@solidjs/router'
+
+import Slider, { createSlides } from 'components/Slider'
+import { FormattedMessage } from 'components/Stubs'
 
 
-export default function() {
-  console.count('Home')
-  
-  return (
-    <section class="container-fluid">
-      <h1>Whatever page content</h1>
+export default function Page({ lang }) {
+  const imgPath = import.meta.env.VITE_IMG_PATH.replace('images', 'slides') // TODO: another env
+  const slider = {
+      desktop: { slides: createSlides({ prefix: `${imgPath}/landing_slide_`, count: 6 }) },
+      mobile:  { slides: createSlides({ prefix: `${imgPath}/landing_slide_`, count: 6, classNames: ['', 's2-3', 's3-3'] }), className: "r2x3" }
+  }
+	return <>
+		<div class="d-none d-sm-block">
+			<Landing lang={ lang } m={ slider.desktop } />
+		</div>
+		
+		<div class="d-block d-sm-none">
+			<Landing lang={ lang } m={ slider.mobile } secs={ 3 } />
+		</div>
+	</>
+}
 
-      <div class="row">
-        <div class="col">
-          <div>{ JSON.stringify(heels(), null, 2) }</div>
-          <div>{ JSON.stringify(models(), null, 2) }</div>
-        </div>
+function Landing({ lang, m, secs }) {
+	const url = lang==='en' ? '/en/view-all' : '/es/view-all'
 
-        <div class="col">{ JSON.stringify(products(), null, 2) }</div>
-
-        <div class="col">
-          <div>{ JSON.stringify(rates(), null, 2) }</div>
-          <div>{ JSON.stringify(sizes(), null, 2) }</div>
-        </div>
-      </div>
-    </section>
-  )
-};
+	return (
+		<Slider class={ m.className } source={ m.slides } seconds={ secs } title={ m.title }>
+			<h4 class="hero-message text-center">
+				<Link href={ url } class="hero-button">
+					<a style="text-transform: uppercase">
+							<FormattedMessage id="filters.viewAll" />
+					</a>
+				</Link>
+			</h4>
+		</Slider>
+	)
+}
