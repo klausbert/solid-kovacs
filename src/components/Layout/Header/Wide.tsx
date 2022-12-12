@@ -1,9 +1,7 @@
 import { Link } from '@solidjs/router'
 
 import { Lang } from './Lang'
-
-// import { ShoppingBagLink } from 'components/Header/ShoppingBagLink'
-// import Nav from 'components/menu/Nav'
+import Nav from './Nav'
 
 
 export function Wide() {
@@ -28,7 +26,7 @@ export function Wide() {
 
 		<div class="row">
 			<section class="d-none d-sm-block  col  col-lg-10 offset-lg-1">
-				{/* <Nav class="justify-content-around" /> */}
+				<Nav className="justify-content-around" />
 			</section>
 		</div>
 	</>

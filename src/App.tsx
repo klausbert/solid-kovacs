@@ -13,16 +13,12 @@ import Product from 'pages/portfolio/product'
 
 import { lang } from 'store/lang'
 
-// import '/index.css'
-// import '/hero.css'
-// import '/slideset2.css'
-
 
 export default function() {
   
   return (
     <MetaProvider>
-      <div><Title></Title></div>
+      <div><Title>{ lang() }</Title></div>
       
       <Router>
         <Layout>

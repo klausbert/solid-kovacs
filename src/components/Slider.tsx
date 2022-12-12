@@ -10,7 +10,7 @@ export const createSlides = ({ prefix, count, postfix = '.jpg', classNames = [''
 	), [])
 )
 
-export default function Slider({ className = '', source, seconds = 4, children }) {
+export default function Slider({ className = '', source, seconds = 4, children = null }) {
 	if (! source) return null
 
 	const [index, setIndex] = createSignal(0)

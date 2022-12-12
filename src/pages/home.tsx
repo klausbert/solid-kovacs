@@ -12,7 +12,7 @@ export default function Page({ lang }) {
   }
 	return <>
 		<div class="d-none d-sm-block">
-			<Landing lang={ lang } m={ slider.desktop } />
+			<Landing lang={ lang } m={ slider.desktop } secs={ 3 } />
 		</div>
 		
 		<div class="d-block d-sm-none">
@@ -25,7 +25,7 @@ function Landing({ lang, m, secs }) {
 	const url = lang==='en' ? '/en/view-all' : '/es/view-all'
 
 	return (
-		<Slider class={ m.className } source={ m.slides } seconds={ secs } title={ m.title }>
+		<Slider className={ m.className } source={ m.slides } seconds={ secs }>
 			<h4 class="hero-message text-center">
 				<Link href={ url } class="hero-button">
 					<a style="text-transform: uppercase">
