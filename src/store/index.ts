@@ -1,5 +1,5 @@
 export { heels } from './heels'
-export { lang, altLangs } from './lang'
+export { lang, setLang, altLangs } from './lang'
 export { models } from './models'
 export { products } from './products'
 export { rates } from './rates'

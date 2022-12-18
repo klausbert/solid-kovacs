@@ -1,7 +1,7 @@
 import { Component, createMemo, For } from 'solid-js'
 import { Suspense } from 'solid-js'
 
-import { products } from 'store/products'
+import { products } from 'store'
 
 import { Featured } from '../Featured'
 import { Gallery } from './Gallery'

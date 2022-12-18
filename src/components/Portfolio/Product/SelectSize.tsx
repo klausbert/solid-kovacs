@@ -1,6 +1,4 @@
-import { sizes } from 'store/sizes'
-import { useShoppingBag } from 'store/shoppingBag'
-import { useSelectedSize } from 'store/selectedSize'
+import { sizes, useSelectedSize, useShoppingBag } from 'store'
 
 
 export function SelectSize({ product }) {
@@ -9,11 +7,11 @@ export function SelectSize({ product }) {
 
   return (
     <nav id="selectSize">
-    { sizes.map( sz => {
+    { sizes().map( sz => {
       const unavailable = ! product.sizes.some( f => f.slug===sz.slug )
               
       return (
-        <div key={sz.slug} class="btn-group" style={{ margin: "0 2px"}} role="group">
+        <div class="btn-group" style={{ margin: "0 2px"}} role="group">
           <input class={"btn btn-outline-dark"+(size && size===sz.slug ? " active" : "")+(unavailable ? " unavailable" : "")}
             type="button" disabled={ isInBag(product) || unavailable } 
             value={ sz.title.split(' ')[1] }

@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js'
 
-import { altLangs, setLang } from '../../../store/lang'
+import { altLangs, setLang } from 'store'
 
 
 const newLang = (lang) => setLang(lang)

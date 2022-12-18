@@ -5,9 +5,7 @@ import { FiShoppingBag, FiHeart } from 'react-icons/fi'
 
 import { SelectSize } from './SelectSize'
 
-import { sizes } from 'store/sizes'
-import { useShoppingBag } from 'store/shoppingBag'
-import { useSelectedSize } from 'store/selectedSize'
+import { sizes, useSelectedSize, useShoppingBag } from 'store'
 
 
 const imgPath = import.meta.env.VITE_IMG_PATH

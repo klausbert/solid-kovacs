@@ -11,7 +11,7 @@ import MidHeel from 'pages/portfolio/mid-heel'
 import LowHeel from 'pages/portfolio/low-heel'
 import Product from 'pages/portfolio/product'
 
-import { lang } from 'store/lang'
+import { lang } from 'store'
 
 
 export default function() {
