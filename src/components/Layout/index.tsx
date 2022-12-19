@@ -11,7 +11,7 @@ export default function({ children }) {
         <Header />
       </div>
 
-      <div class="container-fluid fixed-top-margin">
+      <div class="container-fluid">
         { children }
 
         <Footer />

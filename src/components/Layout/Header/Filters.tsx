@@ -10,7 +10,7 @@ export default function Filters({ theme='light' }) {
 	const args = null
 
 	return <Suspense>
-		<Link href="/view-all" class="nav-item dropdown nav-link">Tango Shoes</Link>
+		<Link href="/portfolio" class="nav-item dropdown nav-link">Tango Shoes</Link>
 
 		<LinkWithDropdown by="heel" labelId="filters.byHeel" items={ heels() } slug={ args && args.heel } styles={ styles[theme] } />
 
@@ -29,9 +29,8 @@ function LinkWithDropdown({ by, labelId, items, slug, styles }) {
 
 	return (
 		<DropdownButton className="d-none d-md-inline" styles={ styles } label={ itemBySlug }>
-		{ unique
-			.map( m => 
-			<Link href={`/by-${by}/${m.slug}`} class="dropdown-item">{ m.title }</Link> 
+		{ unique.map(
+			m => <Link href={`/portfolio/${m.slug}`} class="dropdown-item">{ m.title }</Link> 
 		)}
 		</DropdownButton>
 	)
