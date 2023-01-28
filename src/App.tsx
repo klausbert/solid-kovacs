@@ -1,5 +1,6 @@
+import { createMemo } from 'solid-js'
 import { MetaProvider, Title } from '@solidjs/meta'
-import { Router, Routes, Route } from '@solidjs/router'
+import {  Routes, Route, useLocation } from '@solidjs/router'
 
 import Layout from 'components/Layout'
 
@@ -11,28 +12,27 @@ import MidHeel from 'pages/portfolio/mid-heel'
 import LowHeel from 'pages/portfolio/low-heel'
 import Product from 'pages/portfolio/product'
 
-import { lang } from 'store'
-
 
 export default function() {
+
+  const location = useLocation();
+  const pathname = createMemo(() => (location.pathname));
   
   return (
     <MetaProvider>
-      <div><Title>{ lang() }</Title></div>
+      <div><Title>{ pathname() }</Title></div>
       
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" component={ Home } />
-            <Route path="/portfolio/" component={ Portfolio } />
-            <Route path="/portfolio/sale" component={ Sale } />
-            <Route path="/portfolio/low-heel" component={ LowHeel } />
-            <Route path="/portfolio/mid-heel" component={ MidHeel } />
-            <Route path="/portfolio/high-heel" component={ HighHeel } />
-            <Route path="/portfolio/:id" component={ Product } />
-          </Routes>
-        </Layout>
-      </Router>
+      <Layout>
+        <Routes>
+          <Route path="/" component={ Home } />
+          <Route path="/portfolio/" component={ Portfolio } />
+          <Route path="/portfolio/sale" component={ Sale } />
+          <Route path="/portfolio/low-heel" component={ LowHeel } />
+          <Route path="/portfolio/mid-heel" component={ MidHeel } />
+          <Route path="/portfolio/high-heel" component={ HighHeel } />
+          <Route path="/portfolio/:id" component={ Product } />
+        </Routes>
+      </Layout>
     </MetaProvider>
   )
 }

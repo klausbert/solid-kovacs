@@ -6,14 +6,12 @@ import Footer from './Footer'
 
 export default function({ children }) {
   return (
-    <>
-      <div class="container-fluid">
-        <Header />
+    <div class="container-fluid">
+      <Header />
 
-        { children }
+      { children }
 
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   ) as JSXElement
 }
