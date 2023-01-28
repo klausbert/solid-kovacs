@@ -9,9 +9,7 @@ export default function({ children }) {
     <>
       <div class="container-fluid">
         <Header />
-      </div>
 
-      <div class="container-fluid">
         { children }
 
         <Footer />
